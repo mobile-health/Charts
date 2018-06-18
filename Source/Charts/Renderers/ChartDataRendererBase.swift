@@ -55,6 +55,6 @@ open class DataRenderer: Renderer
     {
         guard let data = dataProvider?.data
             else { return false }
-        return data.entryCount < Int(CGFloat(dataProvider?.maxVisibleCount ?? 0) * (self.viewPortHandler?.scaleX ?? 1.0))
+        return CGFloat(data.entryCount) < CGFloat(dataProvider?.maxVisibleCount ?? 0) * (self.viewPortHandler?.scaleX ?? 1.0)
     }
 }
